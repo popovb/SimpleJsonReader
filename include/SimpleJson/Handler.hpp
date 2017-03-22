@@ -6,6 +6,8 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 //
 
+#include <SimpleJson/Common.hpp>
+
 #ifndef __Handler_hpp__
 #define __Handler_hpp__
 
@@ -22,9 +24,9 @@ namespace simple_json {
 
 	  virtual void ArrayStart();
 	  virtual void ArrayEnd();
-	  //
-	  //TODO
-	  //
+
+	  virtual void Key(const key_t);
+	  virtual void Value(const value_t);
      };
 //////////////////////////////////////////////////////////////////
 }

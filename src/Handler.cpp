@@ -32,4 +32,12 @@ void simple_json::Handler::ArrayStart() {
 void simple_json::Handler::ArrayEnd() {
      return;
 }
+
+void simple_json::Handler::Key(const key_t) {
+     return;
+}
+
+void simple_json::Handler::Value(const value_t) {
+     return;
+}
 //////////////////////////////////////////////////////////////////
