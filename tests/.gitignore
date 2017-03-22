@@ -6,4 +6,5 @@ Makefile
 cmake_install.cmake
 first_test
 handler_test
+reader_test
 
