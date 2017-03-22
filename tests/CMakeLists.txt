@@ -43,3 +43,16 @@ target_link_libraries(handler_test
   pthread
   )
 ##################################################################
+
+##################################################################
+add_executable(reader_test
+  reader_test.cpp
+  ${sources}
+  )
+
+target_link_libraries(reader_test
+  gtest_main
+  gtest
+  pthread
+  )
+##################################################################
