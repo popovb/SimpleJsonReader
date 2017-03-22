@@ -6,23 +6,22 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 //
 
-#ifndef __Handler_hpp__
-#define __Handler_hpp__
+#include <SimpleJson/Handler.hpp>
 
-namespace simple_json {
 //////////////////////////////////////////////////////////////////
-     class Handler {
-
-     public:
-	  Handler();
-	  virtual ~Handler();
-
-	  virtual void ObjectStart();
-	  virtual void ObjectEnd();
-	  //
-	  //TODO
-	  //
-     };
-//////////////////////////////////////////////////////////////////
+simple_json::Handler::Handler() {
+     return;
 }
-#endif // __Handler_hpp__
+
+simple_json::Handler::~Handler() {
+     return;
+}
+
+void simple_json::Handler::ObjectStart() {
+     return;
+}
+
+void simple_json::Handler::ObjectEnd() {
+     return;
+}
+//////////////////////////////////////////////////////////////////
