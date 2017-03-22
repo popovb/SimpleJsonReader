@@ -29,6 +29,10 @@ TEST(handler, test_03)
      private:
      };
      MyHandler H;
+     H.ObjectStart();
+     H.ObjectEnd();
+     H.ArrayStart();
+     H.ArrayEnd();
      ASSERT_TRUE(true);
 }
 
