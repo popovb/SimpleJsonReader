@@ -1,16 +1,21 @@
-//#include <file/NameGenerator.hpp>
-#include <rapidjson/reader.h>
+#include <SimpleJson/Handler.hpp>
 #include <gtest/gtest.h>
-#include <string>
 
-TEST(first, test_01)
+TEST(handler, test_01)
 {
+     using namespace simple_json;
+     Handler H;
      ASSERT_TRUE(true);
-     //using namespace file;
-     //NameGenerator ng(2, 1);
-     //ASSERT_EQ("download_0.xml", ng.name());
 }
 
+//using namespace file;
+//NameGenerator ng(2, 1);
+//ASSERT_EQ("download_0.xml", ng.name());
+
+//#include <file/NameGenerator.hpp>
+//#include <rapidjson/reader.h>
+//#include <string>
+/*
 using namespace rapidjson;
 using namespace std;
 
@@ -57,7 +62,7 @@ TEST(first, test_02)
      reader.Parse(ss, handler);
 }
 
-/*
+
 ! Combination of parseFlags
 ! \see Reader::Parse, Document::Parse, Document::ParseInsitu, Document::ParseStream
 
@@ -74,7 +79,7 @@ enum ParseFlag {
     kParseNanAndInfFlag = 256,      //!< Allow parsing NaN, Inf, Infinity, -Inf and -Infinity as doubles.
     kParseDefaultFlags = RAPIDJSON_PARSE_DEFAULT_FLAGS  //!< Default parse flags. Can be customized by defining RAPIDJSON_PARSE_DEFAULT_FLAGS
 };
-*/
+
 
 TEST(first, test_03)
 {
@@ -124,3 +129,4 @@ TEST(first, test_04)
      auto res = reader.Parse<PF>(ss, handler);
      ASSERT_TRUE(res);
 }
+*/
