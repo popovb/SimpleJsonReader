@@ -8,6 +8,30 @@ TEST(handler, test_01)
      ASSERT_TRUE(true);
 }
 
+TEST(handler, test_02)
+{
+     using namespace simple_json;
+     Handler H;
+     H.ObjectStart();
+     H.ObjectEnd();
+     ASSERT_TRUE(true);
+}
+
+TEST(handler, test_03)
+{
+     using namespace simple_json;
+     class MyHandler: public Handler {
+
+     public:
+	  void ObjectStart() { return; }
+	  void ObjectEnd()   { return; }
+
+     private:
+     };
+     MyHandler H;
+     ASSERT_TRUE(true);
+}
+
 //using namespace file;
 //NameGenerator ng(2, 1);
 //ASSERT_EQ("download_0.xml", ng.name());
