@@ -24,4 +24,12 @@ void simple_json::Handler::ObjectStart() {
 void simple_json::Handler::ObjectEnd() {
      return;
 }
+
+void simple_json::Handler::ArrayStart() {
+     return;
+}
+
+void simple_json::Handler::ArrayEnd() {
+     return;
+}
 //////////////////////////////////////////////////////////////////

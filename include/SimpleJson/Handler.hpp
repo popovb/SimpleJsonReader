@@ -19,6 +19,9 @@ namespace simple_json {
 
 	  virtual void ObjectStart();
 	  virtual void ObjectEnd();
+
+	  virtual void ArrayStart();
+	  virtual void ArrayEnd();
 	  //
 	  //TODO
 	  //
