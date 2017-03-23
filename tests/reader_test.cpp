@@ -36,3 +36,31 @@ TEST(handler, test_03)
      MH MHH;
      ASSERT_TRUE(R.Parse(in, MHH));
 }
+
+class MH: public simple_json::Handler {
+
+public:
+     virtual void ObjectStart() { std::cout << "object start\n"; }
+     virtual void ObjectEnd()   { std::cout << "object end\n";   }
+
+     virtual void ArrayStart()  { std::cout << "array start\n"; }
+     virtual void ArrayEnd()    { std::cout << "array end\n";   };
+
+     virtual void Key(const simple_json::key_t k) {
+	  std::cout << "key=";
+	  std::cout << k << std::endl;
+     };
+     virtual void Value(const simple_json::value_t v) {
+	  std::cout << "value=";
+	  std::cout << v << std::endl;
+     }
+};
+
+TEST(handler, test_04)
+{
+     using namespace simple_json;
+     std::ifstream in("first_test_05.json");
+     Reader R;
+     MH MHH;
+     ASSERT_TRUE(R.Parse(in, MHH));
+}
