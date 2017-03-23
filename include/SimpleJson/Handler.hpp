@@ -6,7 +6,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 //
 
-#include <SimpleJson/Common.hpp>
+#include "Common.hpp"
 
 #ifndef __Handler_hpp__
 #define __Handler_hpp__
