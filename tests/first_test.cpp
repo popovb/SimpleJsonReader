@@ -1,14 +1,10 @@
-//#include <file/NameGenerator.hpp>
-#include <rapidjson/reader.h>
+#include <SimpleJson/rapidjson/reader.h>
 #include <gtest/gtest.h>
 #include <string>
 
 TEST(first, test_01)
 {
      ASSERT_TRUE(true);
-     //using namespace file;
-     //NameGenerator ng(2, 1);
-     //ASSERT_EQ("download_0.xml", ng.name());
 }
 
 using namespace rapidjson;
