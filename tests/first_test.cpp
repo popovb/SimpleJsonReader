@@ -1,6 +1,9 @@
 #include <SimpleJson/rapidjson/reader.h>
+#include <SimpleJson/rapidjson/istreamwrapper.h>
 #include <gtest/gtest.h>
 #include <string>
+#include <sstream>
+#include <fstream>
 
 TEST(first, test_01)
 {
@@ -113,8 +116,75 @@ TEST(first, test_04)
      Reader reader;
      StringStream ss(in.c_str());
 
-     //constexpr int PF = kParseInsituFlag | kParseStopWhenDoneFlag | kParseCommentsFlag | kParseNumbersAsStringsFlag | kParseTrailingCommasFlag;
-     constexpr int PF = kParseValidateEncodingFlag | kParseStopWhenDoneFlag | kParseCommentsFlag | kParseNumbersAsStringsFlag | kParseTrailingCommasFlag;
+     //constexpr int PF = kParseInsituFlag |
+     //kParseStopWhenDoneFlag |
+     //kParseCommentsFlag |
+     //kParseNumbersAsStringsFlag |
+     //kParseTrailingCommasFlag;
+     constexpr int PF = kParseValidateEncodingFlag |
+	                kParseStopWhenDoneFlag     |
+	                kParseCommentsFlag         |
+	                kParseNumbersAsStringsFlag |
+	                kParseTrailingCommasFlag;
+
+     //<unsigned parseFlags, typename InputStream, typename Handler>
+     auto res = reader.Parse<PF>(ss, handler);
+     ASSERT_TRUE(res);
+}
+
+TEST(first, test_06)
+{
+     std::string in = R"raw(
+{
+    "hello6" : "world6",
+    "t"      : true ,
+    "f"      : false,
+    "n"      : null,
+    "i"      : 123,
+    "pi"     : { "x" : 6 },
+    "pi2"    : [ "x", 6 ]
+}
+
+)raw";
+
+     MyHandler handler;
+     Reader reader;
+     std::stringstream in2(in);
+     IStreamWrapper ss(in2);
+
+     //constexpr int PF = kParseInsituFlag |
+     //kParseStopWhenDoneFlag |
+     //kParseCommentsFlag |
+     //kParseNumbersAsStringsFlag |
+     //kParseTrailingCommasFlag;
+     constexpr int PF = kParseValidateEncodingFlag |
+	                kParseStopWhenDoneFlag     |
+	                kParseCommentsFlag         |
+	                kParseNumbersAsStringsFlag |
+	                kParseTrailingCommasFlag;
+
+     //<unsigned parseFlags, typename InputStream, typename Handler>
+     auto res = reader.Parse<PF>(ss, handler);
+     ASSERT_TRUE(res);
+}
+
+TEST(first, test_05)
+{
+     std::ifstream in("first_test_05.json");
+     MyHandler handler;
+     Reader reader;
+     IStreamWrapper ss(in);
+
+     //constexpr int PF = kParseInsituFlag |
+     //kParseStopWhenDoneFlag |
+     //kParseCommentsFlag |
+     //kParseNumbersAsStringsFlag |
+     //kParseTrailingCommasFlag;
+     constexpr int PF = kParseValidateEncodingFlag |
+	                kParseStopWhenDoneFlag     |
+	                kParseCommentsFlag         |
+	                kParseNumbersAsStringsFlag |
+	                kParseTrailingCommasFlag;
 
      //<unsigned parseFlags, typename InputStream, typename Handler>
      auto res = reader.Parse<PF>(ss, handler);
