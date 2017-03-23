@@ -6,6 +6,9 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 //
 
+#include "Handler.hpp"
+#include <istream>
+
 #ifndef __Reader_hpp__
 #define __Reader_hpp__
 
@@ -14,6 +17,7 @@ namespace simple_json {
      class Reader {
 
      public:
+	  bool Parse(std::istream&, Handler&);
      };
 //////////////////////////////////////////////////////////////////
 }
