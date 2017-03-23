@@ -6,15 +6,14 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 //
 
-#include "String.hpp"
+#include <string>
 
-#ifndef __Common_hpp__
-#define __Common_hpp__
+#ifndef __String_hpp__
+#define __String_hpp__
 
 namespace simple_json {
 //////////////////////////////////////////////////////////////////
-     using key_t = String;
-     using value_t = String;
+     using String = std::string;
 //////////////////////////////////////////////////////////////////
 }
-#endif // __Common_hpp__
+#endif // __String_hpp__
