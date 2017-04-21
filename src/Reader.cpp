@@ -8,8 +8,8 @@
 
 #include <SimpleJson/Reader.hpp>
 #include <SimpleJson/Common.hpp>
-#include <SimpleJson/rapidjson/reader.h>
-#include <SimpleJson/rapidjson/istreamwrapper.h>
+#include "rapidjson/reader.h"
+#include "rapidjson/istreamwrapper.h"
 #include "StringValues.hpp"
 
 //////////////////////////////////////////////////////////////////

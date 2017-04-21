@@ -8,6 +8,7 @@ set(SourceDir    "${RootDir}/src")
 link_directories   ("${CurrentDir}/gtest")
 include_directories(
   "${IncludeDir}"
+  "${SourceDir}"
   )
 
 set(CMAKE_CXX_FLAGS "-g -W -Wall -Wextra -std=c++1y")

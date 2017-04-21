@@ -1,5 +1,5 @@
-#include <SimpleJson/rapidjson/reader.h>
-#include <SimpleJson/rapidjson/istreamwrapper.h>
+#include <rapidjson/reader.h>
+#include <rapidjson/istreamwrapper.h>
 #include <gtest/gtest.h>
 #include <string>
 #include <sstream>
